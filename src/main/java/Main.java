@@ -5,9 +5,9 @@ public class Main {
 
     public static void main(String[] args) {
         SQRService service = new SQRService();
-        int lower_limit = 200;
+        int lower_limit = 9000;
         // нижний предел
-        int upper_limit = 400;
+        int upper_limit = 10000;
         // верхний предел
         int number = service.calcSqrt(lower_limit, upper_limit);
 

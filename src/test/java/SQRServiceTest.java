@@ -1,21 +1,45 @@
-import org.junit.jupiter.params.ParameterizedTest;
-import org.junit.jupiter.params.provider.CsvSource;
+import org.junit.jupiter.api.Assertions;
+import org.junit.jupiter.api.Test;
 import ru.netology.javaqa.javaqamvn.sqr.SQRService;
 
 public class SQRServiceTest {
+    @Test
 
-    @ParameterizedTest
-    @CsvSource({
-            "200,400",
-            "200,300",
-            "110,820",
-    })
-
-    public void test(int lower_limit, int upper_limit) {
+    public void testExample() {
         SQRService service = new SQRService();
 
-        int number = service.calcSqrt(lower_limit, upper_limit);
+        int actual = service.calcSqrt(200, 300);
+        int expected = 3;
 
-        System.out.println("Количество квадратов: " + number);
+        Assertions.assertEquals(expected, actual);
+    }
+    @Test
+    public void testLowerLimit() {
+        SQRService service = new SQRService();
+
+        int actual = service.calcSqrt(10, 99);
+        int expected = 0;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testUpperLimit() {
+        SQRService service = new SQRService();
+
+        int actual = service.calcSqrt(9000, 10000);
+        int expected = 5;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+    @Test
+    public void testNegativ() {
+        SQRService service = new SQRService();
+
+        int actual = service.calcSqrt(9000, 10000);
+        int expected = 3;
+
+        Assertions.assertEquals(expected, actual);
     }
 }
