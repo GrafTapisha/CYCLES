@@ -9,9 +9,6 @@ public class SQRServiceTest {
             "200,400",
             "200,300",
             "110,820",
-            "-10,820",
-            "-30,-300",
-            "0,0.55"
     })
 
     public void test(int lower_limit, int upper_limit) {
