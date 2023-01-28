@@ -1,3 +1,5 @@
+package ru.netology.javaqa.javaqamvn.sqr.test;
+
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 import ru.netology.javaqa.javaqamvn.sqr.SQRService;
@@ -13,6 +15,7 @@ public class SQRServiceTest {
 
         Assertions.assertEquals(expected, actual);
     }
+
     @Test
     public void testLowerLimit() {
         SQRService service = new SQRService();
@@ -34,11 +37,22 @@ public class SQRServiceTest {
     }
 
     @Test
-    public void testNegativ() {
+    public void testLimit() {
         SQRService service = new SQRService();
 
-        int actual = service.calcSqrt(9000, 10000);
-        int expected = 3;
+        int actual = service.calcSqrt(100, 101);
+        int expected = 1;
+
+        Assertions.assertEquals(expected, actual);
+    }
+
+
+    @Test
+    public void testSame() {
+        SQRService service = new SQRService();
+
+        int actual = service.calcSqrt(100, 100);
+        int expected = 1;
 
         Assertions.assertEquals(expected, actual);
     }

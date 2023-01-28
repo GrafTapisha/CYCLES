@@ -5,11 +5,11 @@ public class Main {
 
     public static void main(String[] args) {
         SQRService service = new SQRService();
-        int lower_limit = 9000;
+        int lowerLimit = 100;
         // нижний предел
-        int upper_limit = 10000;
+        int upperLimit = 100;
         // верхний предел
-        int number = service.calcSqrt(lower_limit, upper_limit);
+        int number = service.calcSqrt(lowerLimit, upperLimit);
 
         System.out.println("Количество квадратов: " + number);
     }
